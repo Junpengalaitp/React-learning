@@ -8,12 +8,17 @@ class App extends Component {
       {name: 'Max', age: 22},
       {name: 'Jack', age: 12},
       {name: 'Ace', age: 33}
-    ]
+    ],
+    otherState: 'some other value'
   }
 
   swithNameHandler = (params) => {
     console.log('Was clicked!');
-    
+    this.setState({persons: [
+      {name: 'Junpeng Only', age: 27},
+      {name: 'Junpeng Only', age: 27},
+      {name: 'Junpeng Only', age: 27}
+    ]})
   }
   
 
