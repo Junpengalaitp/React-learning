@@ -37,8 +37,6 @@ class App extends Component {
     this.setState({showPersons: !doesShow});
   }
   
-  
-
   render() {
     const style = {
       backgroundColor: '#8888C6',
@@ -52,19 +50,11 @@ class App extends Component {
 
     if (this.state.showPersons) {
       persons = (
-      <div>
-        <Person 
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}/>
-        <Person 
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={this.swithNameHandler.bind(this, 'Junpeng Again')}
-          changed={this.nameChangedHandler}>My hobbies: racing</Person>
-        <Person 
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}/>
-      </div>
+        <div>  
+          {this.state.persons.map(person => {
+            return <Person name={person.name} age={person.age} />
+          })}
+        </div>
       ) 
     }
 
