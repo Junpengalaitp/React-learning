@@ -5,22 +5,13 @@ import Person from "./Person/Person";
 class App extends Component {
   state = {
     persons: [
-      {name: 'Max', age: 22},
-      {name: 'Jack', age: 12},
-      {name: 'Ace', age: 33}
+      {id: '1', name: 'Max', age: 22},
+      {id: '2', name: 'Jack', age: 12},
+      {id: '3', name: 'Ace', age: 33}
     ],
     otherState: 'some other value',
     showPersons: false
   }
-
-  // swithNameHandler = (newName) => {
-  //   console.log('Was clicked!');
-  //   this.setState({persons: [
-  //     {name: newName, age: 27},
-  //     {name: 'Junpeng Only', age: 27},
-  //     {name: 'Junpeng Only', age: 27}
-  //   ]})
-  // }
 
   nameChangedHandler = (event) => {
     this.setState( {persons:
@@ -61,7 +52,8 @@ class App extends Component {
             return <Person 
                     name={person.name}
                     age={person.age}
-                    click={this.deletePersonHandler.bind(this, index)} />
+                    click={this.deletePersonHandler.bind(this, index)}
+                    key={person.name} />
           })}
         </div>
       ) 
